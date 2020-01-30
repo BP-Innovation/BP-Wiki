@@ -1,37 +1,9 @@
-## Welcome to GitHub Pages
+## 欢迎来到BP-Wiki!
 
-You can use the [editor on GitHub](https://github.com/BP-Innovation/BP-Wiki/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+**捣蛋猪(Bad Piggies,简称BP)** 为一款由Rovio开发的益智游戏，于2012年9月27日正式发布。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**新创(Innovation,简称IN)** 为捣蛋猪的现代化版本，致力于提升捣蛋猪的开放化与多元化，针对游戏进行了体验提升、机制优化与特性添加。
 
-### Markdown
+**BP-Wiki** 提供捣蛋猪与新创相关知识的科普，为各位玩家提供一个了解学习、提升技术的平台。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/BP-Innovation/BP-Wiki/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+本项目托管于[Github](https://github.com/BP-Innovation/BP-Wiki)，采用**MarkDown**编写。
