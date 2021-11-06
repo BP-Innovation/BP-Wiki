@@ -1,0 +1,1379 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>指令系统 - BP Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CConsolas&display=fallback">
+        <style>:root{--md-text-font-family:"Fira Sans";--md-code-font-family:"Consolas"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BP Wiki" class="md-header__button md-logo" aria-label="BP Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BP Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              指令系统
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BP Wiki" class="md-nav__button md-logo" aria-label="BP Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    BP Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          基础特性
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础特性" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          基础特性
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/" class="md-nav__link">
+        基础特性简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/parts/" class="md-nav__link">
+        部件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          进阶技术
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="进阶技术" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          进阶技术
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technology/" class="md-nav__link">
+        进阶技术简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technology/vehicles/" class="md-nav__link">
+        载具技术
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          新创
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="新创" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          新创
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        新创
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          指令系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        指令系统
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    指令命令行界面说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    指令语法格式说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指令说明（语法 / 说明 / 参数 / 示例）
+  </a>
+  
+    <nav class="md-nav" aria-label="指令说明（语法 / 说明 / 参数 / 示例）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    一、指令系统设置类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    二、基础语法函数类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    三、基础设施交互类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    四、部件属性类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    五、部件操作类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    附录
+  </a>
+  
+    <nav class="md-nav" aria-label="附录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    部件类型枚举表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    指令命令行界面说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    指令语法格式说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指令说明（语法 / 说明 / 参数 / 示例）
+  </a>
+  
+    <nav class="md-nav" aria-label="指令说明（语法 / 说明 / 参数 / 示例）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    一、指令系统设置类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    二、基础语法函数类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    三、基础设施交互类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    四、部件属性类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    五、部件操作类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    附录
+  </a>
+  
+    <nav class="md-nav" aria-label="附录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    部件类型枚举表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">新创指令系统文档<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">指令命令行界面说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>进入方式：点击右上角按键，可进入指令模式。</p>
+</li>
+<li>
+<p>进入指令模式后，上方为文本显示区，下方为文本输入栏，点击右上角按键（或输入Quit指令、按ESC键）可退出指令模式。</p>
+</li>
+<li>
+<p>指令输入是大小写不敏感的，但部分特殊场合可能会有大小写敏感的情况。</p>
+</li>
+<li>
+<p>进入游戏后，指令模式可在任何游戏模式下进入。但目前的大部分指令都是用于建造模式下的，如果在其它模式下使用这些指令，可能会造成意想不到的后果。</p>
+</li>
+<li>
+<p>按ESC键可以退出指令模式，按上箭头 / 下箭头键可在输入框内显示之前输入的指令内容。</p>
+</li>
+<li>
+<p>如果发生了指令参数错误或者指令运行错误，将报错，文本显示区将显示报错信息。</p>
+</li>
+<li>
+<p>如果指令运行无效但未显示报错信息，可能是因为指令名输入错误。</p>
+</li>
+</ol>
+<h2 id="_3">指令语法格式说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>一条指令分为指令名 / 选项 / 参数三个部分。
+其中，指令名代表所调用对应指令的名称，而选项与参数的设定则分别根据对应指令而定。</p>
+</li>
+<li>
+<p>每条指令间以换行符或分号来作为分隔符，单条指令中各项间以空格来作为分隔符。</p>
+</li>
+<li>
+<p>在指令说明中，会采用以下符号形式来对指令语法项进行说明：</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&lt;...&gt;</strong></td>
+<td>尖括号内文本</td>
+<td>必选的选项或参数（一般内含选项名或参数名）</td>
+</tr>
+<tr>
+<td><strong>[...]</strong></td>
+<td>方括号内文本</td>
+<td>可选的选项或参数（一般内含选项名或参数名）</td>
+</tr>
+<tr>
+<td><strong>...</strong></td>
+<td>无括号文本</td>
+<td>必须输入的文本项（一般为指令名）</td>
+</tr>
+<tr>
+<td><strong>-...</strong></td>
+<td>连字符后跟文本</td>
+<td>选项名（通常为单个字符）</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>在输入指令时，语法中的选项名不需要替换，参数名需要替换为对应参数值。</p>
+</li>
+<li>
+<p>一般地，各选项之间的顺序可以更换，各参数之间的顺序不能更换。</p>
+<p>有时，一个可选参数会与一个选项搭配成一组，这样的参数组合就具有了可更换顺序的功能。</p>
+</li>
+<li>
+<p>在指令说明中，会对指令参数的数据类型进行说明。一般有以下数据类型：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>bool</strong></td>
+<td>布尔值类型，输入值为 True / False</td>
+</tr>
+<tr>
+<td><strong>byte</strong></td>
+<td>整型类型，输入值为 0 到 255 的无符号 8 位整数</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td>整型类型，输入值为 -2147483648 到 2147483647 的带符号 32 位整数</td>
+</tr>
+<tr>
+<td><strong>float</strong></td>
+<td>浮点类型，输入值为单精度浮点数</td>
+</tr>
+<tr>
+<td><strong>enum</strong></td>
+<td>枚举类型，一般用于定义部件类型、配置选项类型等内容，输入值为特定字符串或整数</td>
+</tr>
+<tr>
+<td><strong>string</strong></td>
+<td>字符串类型，表示多个字符的序列</td>
+</tr>
+<tr>
+<td><strong>T</strong></td>
+<td>泛型，非特定数据类型</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>语法说明示例：</p>
+<div class="highlight"><pre><span></span><code>GetPartPosition [-a] &lt;partType&gt;
+</code></pre></div>
+
+<p>在该部件位置获取指令的语法中， <code>GetPartPosition</code> 是必须输入的文本项，代表指令名。</p>
+<p><code>[-a]</code> 是可选的选项，其中连字符后跟选项名 <code>a</code> ；使用该选项时，直接输入 <code>-a</code> 即可。</p>
+<p><code>&lt;partType&gt;</code> 是必选的参数；使用该参数时，需要输入对应参数值。</p>
+</li>
+</ol>
+<h2 id="_4">指令说明（语法 / 说明 / 参数 / 示例）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">一、指令系统设置类<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Quit</strong></p>
+<p>语法：<code>Quit</code></p>
+<p>说明：退出指令模式</p>
+<p>适用范围：全局</p>
+<p>选项与参数：无</p>
+</li>
+<li>
+<p><strong>Clear</strong></p>
+<p>语法：<code>Clear</code></p>
+<p>说明：清除文本显示区的文本，同时会取消选择部件</p>
+<p>适用范围：全局</p>
+<p>选项与参数：无</p>
+</li>
+<li>
+<p><strong>SetButtonAlpha</strong></p>
+<p>语法：<code>SetButtonAlpha &lt;alpha&gt;</code></p>
+<p>说明：设置指令按键的贴图不透明度</p>
+<p>适用范围：全局</p>
+<p>选项与参数：</p>
+<ul>
+<li>alpha：float类型，指令按键的不透明度值</li>
+</ul>
+<p>示例：<code>SetButtonAlpha 0</code> 将使按键贴图完全透明但点击依然有效，相当于隐藏GUI效果</p>
+<p>备注：指令按键的不透明度默认值为255，相当于完全不透明</p>
+</li>
+<li>
+<p><strong>SetButtonPosition</strong></p>
+<p>语法：<code>SetButtonPosition &lt;x&gt; &lt;y&gt;</code></p>
+<p>说明：设置指令按键的位置</p>
+<p>适用范围：全局</p>
+<p>选项与参数：</p>
+<ul>
+<li>x：float类型，按键横坐标</li>
+<li>y：float类型，按键纵坐标</li>
+</ul>
+<p>示例：<code>SetButtonPosition 0 -984</code> 如果屏幕分辨率为1920x1080，那么该指令可将按键移至右下角（按键大小为128x96，因此y值为-1080+96=-984）</p>
+<p>备注：指令按键坐标的默认值为(0, 0)；x以向右为正方向，y以向上为正方向</p>
+</li>
+</ol>
+<h3 id="_6">二、基础语法函数类<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Define</strong></p>
+<p>语法：<code>Define &lt;identifier&gt; &lt;replacement&gt;</code></p>
+<p>作用说明：宏定义，支持文本宏替换</p>
+<p>适用范围：全局</p>
+<p>选项与参数：</p>
+<ul>
+<li>identifier：string类型</li>
+<li>replacement：string类型</li>
+</ul>
+</li>
+</ol>
+<h3 id="_7">三、基础设施交互类<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>GetSettingsValue</strong></p>
+<p>语法：<code>GetSettingsValue &lt;option&gt;</code></p>
+<p>说明：获取自定义配置选项的设定值</p>
+<p>适用范围：全局</p>
+<p>选项与参数：</p>
+<ul>
+<li>option：enum类型，对应自定义配置选项的名称</li>
+</ul>
+<p>示例：<code>GetSettingsValue NoGravity</code> 将获取无重力配置选项的对应值 True / False</p>
+</li>
+<li>
+<p><strong>SetSettingsValue</strong></p>
+<p>语法：<code>SetSettingsValue &lt;option&gt; &lt;value&gt;</code></p>
+<p>说明：设置自定义配置选项的设定值</p>
+<p>适用范围：全局</p>
+<p>选项与参数：</p>
+<ul>
+<li>option：enum类型，对应自定义配置选项的名称</li>
+<li>value：T类型，将设置的设定值</li>
+</ul>
+<p>示例：<code>SetSettingsValue NoGravity True</code> 将开启无重力配置选项</p>
+<p>备注：设定值的类型与配置选项相对应，如果类型不匹配将报错；设置后不会自动保存配置，如果想要保存则需使用SaveSettings指令；部分配置选项可能无法运行时更改</p>
+</li>
+<li>
+<p><strong>GetSettingsScope</strong></p>
+<p>语法：<code>GetSettingsScope &lt;option&gt;</code></p>
+<p>说明：获取自定义配置选项的作用域</p>
+<p>适用范围：全局</p>
+<p>选项与参数：</p>
+<ul>
+<li>option：enum类型，对应自定义配置选项的名称</li>
+</ul>
+</li>
+<li>
+<p><strong>SetSettingsScope</strong></p>
+<p>语法：<code>SetSettingsScope &lt;option&gt; &lt;scope&gt;</code></p>
+<p>说明：设置自定义配置选项的作用域</p>
+<p>适用范围：全局</p>
+<p>选项与参数：</p>
+<ul>
+<li>option：enum类型，对应自定义配置选项的名称</li>
+<li>scope：enum类型，将设置的作用域</li>
+</ul>
+</li>
+<li>
+<p><strong>SaveSettings</strong></p>
+<p>语法：<code>SaveSettings</code></p>
+<p>说明：保存自定义配置选项文件</p>
+<p>适用范围：全局</p>
+<p>选项与参数：无</p>
+</li>
+</ol>
+<h3 id="_8">四、部件属性类<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>GetPartPosition</strong></p>
+<p>语法：<code>GetPartPosition [-a] &lt;partType&gt; [customIndex]</code></p>
+<p>说明：获取对应类型部件的真实位置坐标</p>
+<p>适用范围：建造模式与运行模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>-a：all选项，若开启则输出所有对应部件的坐标，若关闭则输出最后放置的部件的坐标</li>
+<li>partType：enum类型，对应部件类型</li>
+<li>customIndex：int类型，对应部件材质类型（可选，若不选则默认所有部件材质类型）</li>
+</ul>
+<p>示例：<code>GetPartPosition -a Pig</code> 将获取所有雀斑猪的真实位置坐标</p>
+</li>
+<li>
+<p><strong>GetPartCoord</strong></p>
+<p>语法：<code>GetPartCoord [-a] &lt;partType&gt; [customIndex]</code></p>
+<p>说明：获取对应类型的部件的建造位置坐标</p>
+<p>适用范围：建造模式与运行模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>-a：all选项，若开启则输出所有对应部件的坐标，若关闭则输出最后放置的部件的坐标</li>
+<li>partType：enum类型，对应部件类型</li>
+<li>customIndex：int类型，对应部件材质类型（可选，若不选则默认所有部件材质类型）</li>
+</ul>
+<p>示例：<code>GetPartCoord -a Pig</code> 将获取所有雀斑猪的建造位置坐标</p>
+</li>
+</ol>
+<h3 id="_9">五、部件操作类<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>SelectParts</strong></p>
+<p>语法：<code>SelectParts &lt;x&gt; &lt;y&gt; &lt;width&gt; &lt;height&gt; [partType] [customIndex]</code></p>
+<p>说明：选择建造格中一部分区域内的部件</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>x：int类型，矩形选择范围的左下角横坐标</li>
+<li>y：int类型，矩形选择范围的左下角纵坐标</li>
+<li>width：int类型，矩形选择范围的宽度</li>
+<li>height：int类型，矩形选择范围的高度</li>
+<li>partType：enum类型，所选择的部件类型（可选，若不选则默认所有部件类型）</li>
+<li>customIndex：int类型，所选择的部件材质类型（可选，若不选则默认所有部件材质类型）</li>
+</ul>
+<p>示例：<code>SelectParts 1 1 10 10</code> 即可选择一个起始点(1,1)、长10格、宽10格的矩形内的所有部件</p>
+<p>备注：如果在已经选择过一次部件后再次选择，原有的选中部件不会被取消选择，选择区域会叠加</p>
+</li>
+<li>
+<p><strong>DeselectParts</strong></p>
+<p>语法：<code>DeselectParts</code></p>
+<p>说明：取消选择部件</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：无</p>
+</li>
+<li>
+<p><strong>SetParts</strong></p>
+<p>语法：<code>SetParts &lt;x&gt; &lt;y&gt; &lt;width&gt; &lt;height&gt; &lt;partType&gt; [customIndex]</code></p>
+<p>说明：批量摆放部件</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>x：int类型，矩形选择范围的左下角横坐标</li>
+<li>y：int类型，矩形选择范围的左下角纵坐标</li>
+<li>width：int类型，矩形选择范围的宽度</li>
+<li>height：int类型，矩形选择范围的高度</li>
+<li>partType：enum类型，所摆放的部件类型</li>
+<li>customIndex：int类型，所摆放的部件材质类型（可选，若不选则默认无星材质类型）</li>
+</ul>
+<p>示例：<code>SetParts 1 1 10 10 MetalFrame 0</code> 即可在一个起始点(1,1)、长10格宽10格的矩形内批量摆放无星铁框部件</p>
+</li>
+<li>
+<p><strong>SetPartsInterval</strong></p>
+<p>语法：<code>SetPartsInterval &lt;x&gt; &lt;y&gt; &lt;width&gt; &lt;height&gt; &lt;deltaX&gt; &lt;deltaY&gt; &lt;partType&gt; [customIndex]</code></p>
+<p>说明：按一定间距批量摆放部件</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>x：int类型，矩形选择范围的左下角横坐标</li>
+<li>y：int类型，矩形选择范围的左下角纵坐标</li>
+<li>width：int类型，矩形选择范围的宽度</li>
+<li>height：int类型，矩形选择范围的高度</li>
+<li>deltaX：int类型，水平摆放间距</li>
+<li>deltaY：int类型，垂直摆放间距</li>
+<li>partType：enum类型，所摆放的部件类型</li>
+<li>customIndex：int类型，所摆放的部件材质类型（可选，若不选则默认无星材质类型）</li>
+</ul>
+<p>示例：<code>SetPartsInterval 1 1 10 10 2 2 MetalFrame 0</code> 即可在一个起始点位于(1,1)、长10格、宽10格的矩形内间距为二（即相邻部件之间隔一格）地批量摆放无星铁框部件</p>
+<p>备注：当deltaX / deltaY参数为1时，与SetParts效果相同；当deltaX / deltaY参数为非正整数时，将报错</p>
+</li>
+<li>
+<p><strong>MoveParts</strong></p>
+<p>语法：<code>MoveParts &lt;x&gt; &lt;y&gt;</code></p>
+<p>说明：移动选中的部件到指定位置</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>x：int类型，水平移动距离</li>
+<li>y：int类型，垂直移动距离</li>
+</ul>
+<p>示例：<code>MoveParts 10 10</code> 即可将选中部件移动到向右10格、向上10格的位置</p>
+<p>备注：使用该指令后，选中部件并不会被取消选择；此指令使用前需搭配SelectParts指令</p>
+</li>
+<li>
+<p><strong>CopyParts</strong></p>
+<p>语法：<code>CopyParts &lt;x&gt; &lt;y&gt; [reselect]</code></p>
+<p>说明：复制选中的部件到指定位置</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>x：int类型，水平复制距离</li>
+<li>y：int类型，垂直复制距离</li>
+<li>reselect：bool类型，是否重新选择，将选择范围替换为复制后的新部件（可选，若不选则默认不替换）</li>
+</ul>
+<p>示例：<code>CopyParts 10 10</code> 即可将选中部件复制到向右10格、向上10格的位置</p>
+<p>备注：使用该指令后，选中部件并不会被取消选择（除非进行了重新选择）；此指令使用前需搭配SelectParts指令</p>
+</li>
+<li>
+<p><strong>RotateParts</strong></p>
+<p>语法：<code>RotateParts &lt;count&gt;</code></p>
+<p>说明：翻转或旋转选中的部件</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>count：int类型，翻转 / 旋转的次数</li>
+</ul>
+<p>备注：此指令使用前需搭配SelectParts指令</p>
+</li>
+<li>
+<p><strong>ReplaceParts</strong></p>
+<p>语法：<code>ReplaceParts &lt;partType&gt; [customIndex] [reselect]</code></p>
+<p>说明：将选中的部件替换为指定类型的新部件</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：</p>
+<ul>
+<li>partType：enum类型，所替换成的部件类型</li>
+<li>customIndex：int类型，所替换成的部件材质类型（可选，若不选则默认无星材质）</li>
+<li>reselect：bool类型，是否重新选择而将替换后的新部件纳入选择范围（可选，若不选则默认不替换）</li>
+</ul>
+<p>示例：<code>ReplaceParts MetalFrame 0</code> 即可将选中部件替换为无星铁框</p>
+<p>​         <code>ReplaceParts MetalFrame 0 True</code> 即可将选中部件替换为无星铁框，同时将替换上去的无星铁框纳入部件选中区域</p>
+<p>备注：此指令使用前需搭配SelectParts指令；使用该命令后将清除部件选中区域；如果开启了重新选择选项，那么清除后会再将新部件选择</p>
+</li>
+<li>
+<p><strong>RemoveParts</strong></p>
+<p>语法：<code>RemoveParts</code></p>
+<p>说明：移除选中部件</p>
+<p>适用范围：建造模式</p>
+<p>选项与参数：无</p>
+<p>备注：此指令使用前需搭配SelectParts指令；使用该命令后将清除部件选中区域</p>
+</li>
+</ol>
+<h2 id="_10">附录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">部件类型枚举表<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>枚举值</th>
+<th>枚举名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Unknown</td>
+<td>未定义</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Pig</td>
+<td>雀斑猪</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TimeBomb</td>
+<td>定时炸弹</td>
+</tr>
+<tr>
+<td>3</td>
+<td>KingPig</td>
+<td>猪王</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Egg</td>
+<td>鸟蛋</td>
+</tr>
+<tr>
+<td>5</td>
+<td>WoodenFrame</td>
+<td>木框</td>
+</tr>
+<tr>
+<td>6</td>
+<td>MetalFrame</td>
+<td>铁框</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CartWheel</td>
+<td>木轮</td>
+</tr>
+<tr>
+<td>8</td>
+<td>NormalWheel</td>
+<td>铁轮</td>
+</tr>
+<tr>
+<td>9</td>
+<td>SmallWheel</td>
+<td>小轮</td>
+</tr>
+<tr>
+<td>10</td>
+<td>MotorWheel</td>
+<td>驱动轮</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Bellows</td>
+<td>风箱</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Fan</td>
+<td>风扇</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Propeller</td>
+<td>小螺旋桨</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Rotor</td>
+<td>旋翼（大螺旋桨）</td>
+</tr>
+<tr>
+<td>15</td>
+<td>CokeBottle</td>
+<td>可乐瓶</td>
+</tr>
+<tr>
+<td>16</td>
+<td>SodaBottle</td>
+<td>汽水瓶</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Rocket</td>
+<td>蓝火箭</td>
+</tr>
+<tr>
+<td>18</td>
+<td>RedRocket</td>
+<td>红火箭</td>
+</tr>
+<tr>
+<td>19</td>
+<td>EngineSmall</td>
+<td>小发动机（电机）</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Engine</td>
+<td>中发动机（柴油发动机）</td>
+</tr>
+<tr>
+<td>21</td>
+<td>EngineBig</td>
+<td>大发动机（涡轮发动机）</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Umbrella</td>
+<td>雨伞</td>
+</tr>
+<tr>
+<td>23</td>
+<td>PoweredUmbrella</td>
+<td>驱动伞</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Spring</td>
+<td>弹簧</td>
+</tr>
+<tr>
+<td>25</td>
+<td>TNT</td>
+<td>TNT</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Rope</td>
+<td>绳子</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Balloon</td>
+<td>气球</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Balloons2</td>
+<td>二气球</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Balloons3</td>
+<td>三气球</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Sandbag</td>
+<td>沙袋</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Sandbag2</td>
+<td>二沙袋</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Sandbag3</td>
+<td>三沙袋</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Wings</td>
+<td>木机翼</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Tailplane</td>
+<td>木尾翼</td>
+</tr>
+<tr>
+<td>35</td>
+<td>MetalWing</td>
+<td>铁机翼</td>
+</tr>
+<tr>
+<td>36</td>
+<td>MetalTail</td>
+<td>铁尾翼</td>
+</tr>
+<tr>
+<td>37</td>
+<td>SpringBoxingGlove</td>
+<td>拳套</td>
+</tr>
+<tr>
+<td>38</td>
+<td>StickyWheel</td>
+<td>吸盘轮</td>
+</tr>
+<tr>
+<td>39</td>
+<td>GrapplingHook</td>
+<td>抓钩（吸盘枪）</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Pumpkin</td>
+<td>南瓜</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Kicker</td>
+<td>分离器</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Gearbox</td>
+<td>变速箱</td>
+</tr>
+<tr>
+<td>43</td>
+<td>GoldenPig</td>
+<td>金猪</td>
+</tr>
+<tr>
+<td>44</td>
+<td>PointLight</td>
+<td>点光源</td>
+</tr>
+<tr>
+<td>45</td>
+<td>SpotLight</td>
+<td>聚光灯</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 新创" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              新创
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../about/" class="md-footer__link md-footer__link--next" aria-label="下一页: 关于" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              关于
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
