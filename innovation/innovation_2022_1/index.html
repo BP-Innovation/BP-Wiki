@@ -1,0 +1,807 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>新创Unity 2022.1 - BP Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CConsolas&display=fallback">
+        <style>:root{--md-text-font-family:"Fira Sans";--md-code-font-family:"Consolas"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unity-20221" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BP Wiki" class="md-header__button md-logo" aria-label="BP Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BP Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              新创Unity 2022.1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BP Wiki" class="md-nav__button md-logo" aria-label="BP Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    BP Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          基础特性
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础特性" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          基础特性
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/" class="md-nav__link">
+        基础特性简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/parts/" class="md-nav__link">
+        部件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          进阶技术
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="进阶技术" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          进阶技术
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technology/" class="md-nav__link">
+        进阶技术简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technology/vehicles/" class="md-nav__link">
+        载具技术
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          新创
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="新创" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          新创
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        新创
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          新创Unity 2022.1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        新创Unity 2022.1
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 喷气引擎系统
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 喷气引擎系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 喷气引擎
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 燃料管道
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 燃料箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 燃料系统
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 电路系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 应用界面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 新型按键系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 实体光源系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 自动控制光源
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 其余调整
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 喷气引擎系统
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 喷气引擎系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 喷气引擎
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 燃料管道
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 燃料箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 燃料系统
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 电路系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 应用界面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 新型按键系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 实体光源系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 自动控制光源
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 其余调整
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="unity-20221">新创Unity 2022.1 更新说明<a class="headerlink" href="#unity-20221" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 喷气引擎系统<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>喷气引擎系统为一类新部件系统，由喷气引擎、燃料管道、燃料箱三部分组成。</p>
+<h3 id="11">1.1 喷气引擎<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>[1] 喷气引擎负责消耗燃料并将其转化为推力。喷气引擎的部件材质分为普通型与矢量推进型两类。</p>
+<p>[2] 普通型喷气引擎具备反推功能，其推力可在-1500N<sub>3000N间调节，但不具备推力朝向控制技术；矢量推进型喷气引擎无反推功能，推力可在0</sub>3000N间调节，推力朝向可在-45°~45°间调节。喷气引擎的推力控制与朝向控制技术由新型按键系统中的滑块按键提供支持。</p>
+<p>[3] 喷气引擎的每秒耗油量为：0.2 * |F| + 0.1。其中，F即喷气引擎推力，单位为kN，每秒耗油量的单位为kg/s。</p>
+<p>[4] 当喷气引擎开启反推时，会带来一定的推力损失，但耗油量不会因此减少。</p>
+<p>[5] 喷气引擎的尾焰具有灼烧效果，能够破坏连接点，其尾焰长度与宽度会随着推力的增大而增大。</p>
+<h3 id="12">1.2 燃料管道<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>[1] 燃料管道负责喷气引擎与燃料箱间的连接。燃料管道的部件材质分为固定连接型、自动连接型、阀门型三类。</p>
+<p>[2] 固定连接型燃料管道仅有水平连接与垂直连接两种连接方式；自动连接型燃料管道能够自由连接周围四个朝向上的燃料部件。</p>
+<p>[3] 阀门型燃料管道也仅有水平连接与垂直连接两种连接方式，但可以通过按键来自由控制连接的开闭。</p>
+<h3 id="13">1.3 燃料箱<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>[1] 燃料箱负责存储燃料并提供燃料。</p>
+<p>[2] 单个燃料箱的总燃料量为4kg，空载质量为2kg。因此，随着燃料的消耗与补充，燃料箱的质量会在2kg~6kg间变化。</p>
+<p>[3] 燃料箱可以向喷气引擎供油，也可以接受核电机等发动机的加油。单个燃料箱具有1kg/s的最大供油速率与0.5kg/s的最大加油速率。</p>
+<p>[4] 单个核电机或其它类型发动机向燃料箱提供的加油速率为0.2kg/s。</p>
+<p>[5] 当受到强烈的尾焰烧灼或者受到极大的冲击时，燃料箱会被引爆。</p>
+<h3 id="14">1.4 燃料系统<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p>[1] 由相互连接的燃料部件所组成的部件连通块被称为燃料系统。因此，一个载具中可具有多个燃料系统，但一个燃料系统无法同时处于多个载具中。</p>
+<p>[2] 各个燃料系统间的供油耗油机制相互独立，不会相互影响。</p>
+<p>[3] 每个燃料系统均具有独立的喷气引擎按键。同时，每个载具的喷气引擎会具有一个总开关按键。</p>
+<p>[4] 可以通过阀门燃料管道来控制多个燃料系统间的合并与分离。</p>
+<h2 id="2">2. 电路系统<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>电路系统为一类新部件系统，目前共有48种电路元件组成。</p>
+<p>[1] 导线类（无星材质）：导线，固定导线，电磁导线，固定电磁导线；</p>
+<p>[2] 基础电路元件类（一星材质）：开关，单刀双掷开关，电阻×6，电源×3，电容×3，电压表，电流表；</p>
+<p>[3] 集成电路类（二星材质）：接地，高电平，缓冲门，非门，或门×2，与门×2，或非门×2，与非门×2，晶体管×2，运算放大器×2，延时器×2；</p>
+<p>[4] 电磁类与部件应用类（三星材质）：接口，电磁接口，无线输电器×2，点电荷，电场生成器，磁场生成器，部件触发器，压力传感器，数字显示器。</p>
+<p>电路系统的具体介绍内容请见附加的电路系统文档。</p>
+<h2 id="3">3. 应用界面<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>应用界面为新创添加的新用户界面。目前，应用界面包括设置界面与数据界面两大功能。</p>
+<p>[1] 应用界面的开启/关闭均按键位于右上角。开启应用界面后，游戏将处于暂停状态。</p>
+<p>[2] 目前，设置界面包括物理设置、按键系统设置、载具存档设置三部分。可通过底部的保存键与重置键来保存设置文件或恢复选项默认值。</p>
+<p>[3] 目前，数据界面包括时间数据、性能数据、设备数据三部分，可显示当前时间、帧率、内存使用情况、设备型号等数据。</p>
+<h2 id="4">4. 新型按键系统<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>新版本中，新型按键系统将替代旧有按键系统。新型按键系统独立于旧有按键系统，添加了诸多新特性。</p>
+<p>[1] 新型按键支持载具按键分离机制，不同载具的按键将会相互分离。为防止按键数过多，载具将按照部件数进行降序排序，排名前三的载具会进行按键分离，而排名往后的载具将不再分离。可通过设置界面中的「最大载具分离数」选项来调整载具按键分离机制。例如，当最大载具分离数被设置为0时，将不进行载具按键分离。</p>
+<p>[2] 新型按键支持滑块按键。滑块按键分为上下两部分，可分别上调或下调对应数值。同时，在滑块按键上使用左右滑动手势，可以开启或收回滑块按键的展开栏。滑块按键展开栏具有 上调/下调/重置 三个子按键，有利于对滑块按键进行精密操作。</p>
+<p>[3] 当按键数增多到一定程度时，按键会变小并分为多行。当按键行数过多时，将限制显示区域大小，并提供滑动条。可通过设置界面中的「按键大小比例」与「滑动高度比例」选项来调整按键的显示设置。</p>
+<p>[4] 可通过键盘来操纵按键。1<sub>26号按键分别对应A-Z键，27</sub>52号按键分别对应A1（先按1后按A）-Z1键，以此类推。可通过设置界面中的「显示部件索引标记」选项来显示按键所对应的标记。</p>
+<p>[5] 支持新型按键系统与旧有按键系统的相互切换，可通过设置界面中的「启用新型按键」选项来调整。</p>
+<h2 id="5">5. 实体光源系统<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>[1] 重写了实体光源的碰撞检测算法，碰撞检测将更加高效、稳定。</p>
+<p>[2] 调整了实体光源的耗电机制，提高了低速碰撞时的耗电量。</p>
+<p>[3] 无摩擦光柱：装于冰框、染色框或透明框中的光柱的摩擦力系数将为0。</p>
+<p>[4] 虚化光组件：装于透明框中的光组件将忽略与自身载具部件的碰撞。</p>
+<h2 id="6">6. 自动控制光源<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>[1] 自动控制光源为点光源的一类特殊材质，贴图偏紫红色。类似于自动控制门，自动控制光源可以通过虚化一定区域内的指定部件来让物体通过。</p>
+<p>[2] 自动控制光源总共有五种朝向类型。前四种为自动控制型，当自动控制光源检测到指定方向上的部件时，会虚化其自身5×5区域内的木框与铁框部件，使得部件能够通过。第五种为手动控制型，开启后将直接虚化周围部件。</p>
+<p>[3] 当有物体处于自动控制光源的虚化区域中时，自动控制光源将无法关闭。</p>
+<p>[4] 自动控制光源具有一定的延时，可能无法及时探测到高速运动物体。装于冰框中的自动控制光源将能够探测高速物体并迅速虚化。</p>
+<h2 id="7">7. 其余调整<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>[1] 核TNT与TNT火箭添加冷却机制，冷却时间为0.1s。</p>
+<p>[2] 新创O/A版本添加越野轮、铰链板与履带板。</p>
+<p>[3] 铰链板与履带板的连接强度下调约25%。</p>
+<p>[4] 定向伞添加滑块按键，可以自由指定定向伞的固定角度。</p>
+<p>[5] 启动界面调整，版本选择器界面调整。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 新创" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              新创
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../about/" class="md-footer__link md-footer__link--next" aria-label="下一页: 关于" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              关于
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
